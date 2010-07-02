@@ -1,0 +1,9 @@
+--- origsrc/libgexiv2-0.1.0/Makefile	2010-06-28 14:00:02.000000000 -0500
++++ src/libgexiv2-0.1.0/Makefile	2010-06-30 15:39:29.934302900 -0500
+@@ -166,5 +166,5 @@ $(EXPANDED_OBJ_FILES): $(BUILD_DIR)/%.o:
+ 	libtool --mode=compile $(CXX) -c $(EXT_PKGS_CFLAGS) $(CFLAGS) -I. -o $@ $<
+ 
+ $(LIBRARY_BIN): $(EXPANDED_OBJ_FILES)
+-	libtool --mode=link $(CXX) -rpath $(PREFIX)/$(LIB) $(EXPANDED_LO_FILES) $(EXT_PKGS_LDFLAGS) $(CFLAGS) $(LDFLAGS) -o $(LIBRARY_BIN)
++	libtool --mode=link $(CXX) -rpath $(PREFIX)/$(LIB) -no-undefined $(EXPANDED_LO_FILES) $(EXT_PKGS_LDFLAGS) $(CFLAGS) $(LDFLAGS) -o $(LIBRARY_BIN)
+ 
