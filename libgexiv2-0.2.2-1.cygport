@@ -1,0 +1,15 @@
+DESCRIPTION="GObject wrapper for Exiv2 library"
+HOMEPAGE="http://trac.yorba.org/wiki/gexiv2"
+SRC_URI="http://yorba.org/download/gexiv2/${PV[1]}.${PV[2]}/${P}.tar.bz2"
+
+PKG_NAMES="libgexiv2_0 libgexiv2-devel vala-gexiv2"
+libgexiv2_0_CONTENTS="usr/bin/*-0.dll usr/share/doc/"
+libgexiv2_devel_CONTENTS="usr/include/ usr/lib/"
+vala_gexiv2_CONTENTS="usr/share/vala/"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	./configure --prefix=/usr
+	cygmake LDFLAGS=-no-undefined
+}
