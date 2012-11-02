@@ -1,6 +1,0 @@
-category: Graphics
-requires: libgexiv2_0 libexiv2-devel libglib2.0-devel libstdc++6-devel
-external-source: libgexiv2
-sdesc: "GObject wrapper for Exiv2 library (development)"
-ldesc: "gexiv2 is a GObject-based wrapper around the Exiv2 library. It 
-makes the basic features of Exiv2 available to GNOME applications."

@@ -1,6 +1,0 @@
-category: Graphics
-requires: libgexiv2-devel vala
-external-source: libgexiv2
-sdesc: "GObject wrapper for Exiv2 library (Vala bindings)"
-ldesc: "gexiv2 is a GObject-based wrapper around the Exiv2 library. It 
-makes the basic features of Exiv2 available to GNOME applications."

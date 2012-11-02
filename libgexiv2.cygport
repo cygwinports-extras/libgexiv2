@@ -1,0 +1,23 @@
+NAME="libgexiv2"
+VERSION=0.5.0
+RELEASE=1
+CATEGORY="Gnome"
+SUMMARY="GObject wrapper for Exiv2 library"
+DESCRIPTION="gexiv2 is a GObject-based wrapper around the Exiv2 library. It
+makes the basic features of Exiv2 available to GNOME applications."
+HOMEPAGE="http://redmine.yorba.org/projects/gexiv2/wiki"
+SRC_URI="http://yorba.org/download/gexiv2/${PV[1]}.${PV[2]}/${P}.tar.xz"
+
+PKG_NAMES="libgexiv2_1 libgexiv2-devel vala-gexiv2"
+libgexiv2_1_CONTENTS="usr/bin/cyggexiv2-1.dll usr/share/doc/"
+libgexiv2_devel_CONTENTS="usr/include/ usr/lib/"
+vala_gexiv2_CONTENTS="usr/share/vala/"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	./configure --prefix=/usr
+	cygmake LDFLAGS=-no-undefined
+}
+
+KEEP_LA_FILES="none"
