@@ -1,23 +1,35 @@
+inherit python python3
+
 NAME="libgexiv2"
-VERSION=0.5.0
+VERSION=0.6.1
 RELEASE=1
-CATEGORY="Gnome"
+CATEGORY="Libs"
 SUMMARY="GObject wrapper for Exiv2 library"
 DESCRIPTION="gexiv2 is a GObject-based wrapper around the Exiv2 library. It
 makes the basic features of Exiv2 available to GNOME applications."
 HOMEPAGE="http://redmine.yorba.org/projects/gexiv2/wiki"
-SRC_URI="http://yorba.org/download/gexiv2/${PV[1]}.${PV[2]}/${P}.tar.xz"
+SRC_URI="http://yorba.org/download/gexiv2/${VERSION%.*}/${NAME}_${VERSION}.tar.xz"
 
-PKG_NAMES="libgexiv2_1 libgexiv2-devel vala-gexiv2"
-libgexiv2_1_CONTENTS="usr/bin/cyggexiv2-1.dll usr/share/doc/"
-libgexiv2_devel_CONTENTS="usr/include/ usr/lib/"
+PKG_NAMES="libgexiv2_2 libgexiv2-common libgexiv2-devel girepository-GExiv2_0.4 vala-gexiv2"
+libgexiv2_2_REQUIRES="libgexiv2-common"
+libgexiv2_2_CONTENTS="usr/bin/cyggexiv2-2.dll"
+libgexiv2_common_CONTENTS="usr/share/doc/"
+libgexiv2_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
+girepository_GExiv2_0_4_CONTENTS="usr/*/gir*/GExiv2-0.4.* usr/lib/python*/"
 vala_gexiv2_CONTENTS="usr/share/vala/"
 
 src_compile() {
 	lndirs
 	cd ${B}
-	./configure --prefix=/usr
-	cygmake LDFLAGS=-no-undefined
+	./configure --prefix=/usr --enable-introspection
+	cygmake LDFLAGS="-no-undefined"
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+	python_optimize
+	python3_optimize
 }
 
 KEEP_LA_FILES="none"
