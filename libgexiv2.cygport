@@ -1,14 +1,14 @@
 inherit python python3
 
 NAME="libgexiv2"
-VERSION=0.6.1
+VERSION=0.7.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="GObject wrapper for Exiv2 library"
 DESCRIPTION="gexiv2 is a GObject-based wrapper around the Exiv2 library. It
 makes the basic features of Exiv2 available to GNOME applications."
 HOMEPAGE="http://redmine.yorba.org/projects/gexiv2/wiki"
-SRC_URI="http://yorba.org/download/gexiv2/${VERSION%.*}/${NAME}_${VERSION}.tar.xz"
+SRC_URI="http://yorba.org/download/gexiv2/${VERSION%.*}/${NAME}-${VERSION}.tar.xz"
 
 PKG_NAMES="libgexiv2_2 libgexiv2-common libgexiv2-devel girepository-GExiv2_0.4 vala-gexiv2"
 libgexiv2_2_REQUIRES="libgexiv2-common"
