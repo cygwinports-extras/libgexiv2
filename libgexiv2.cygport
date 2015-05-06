@@ -2,7 +2,7 @@ inherit python python3
 
 NAME="libgexiv2"
 VERSION=0.7.0
-RELEASE=2
+RELEASE=3
 CATEGORY="Libs"
 SUMMARY="GObject wrapper for Exiv2 library"
 DESCRIPTION="gexiv2 is a GObject-based wrapper around the Exiv2 library. It
