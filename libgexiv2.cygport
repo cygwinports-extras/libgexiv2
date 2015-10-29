@@ -2,7 +2,7 @@ ORIG_PN="gexiv2"
 inherit python python3 gnome.org
 
 NAME="libgexiv2"
-VERSION=0.9.1
+VERSION=0.10.3
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="GObject wrapper for Exiv2 library"
